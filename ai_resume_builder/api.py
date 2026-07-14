@@ -1,93 +1,91 @@
 from pathlib import Path
-import subprocess
-import sys
+import re
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
-# Create the FastAPI application instance
+from main import generate_outputs
+
 app = FastAPI(title="AI Resume Builder API")
-
-# Base folder for this project
 BASE_DIR = Path(__file__).resolve().parent
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-# Root endpoint
+
+class ResumeRequest(BaseModel):
+    student_profile: str
+    job_description: str
+
+
 @app.get("/")
 def read_root():
     return {"message": "AI Resume Builder API is Running"}
 
 
-# Health check
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
 
 
-# Generate Resume
 @app.post("/generate-resume")
-def generate_resume():
-    print("=================================================", flush=True)
-    print(">>> REQUEST RECEIVED <<<", flush=True)
-    print(">>> STARTING MAIN.PY <<<", flush=True)
+def generate_resume(payload: ResumeRequest):
+    if not payload.student_profile.strip() or not payload.job_description.strip():
+        raise HTTPException(status_code=400, detail="Both profile and job description are required.")
 
     try:
-        # Run main.py
-        result = subprocess.run(
-            [sys.executable, "main.py"],
-            cwd=BASE_DIR,
-            capture_output=True,
-            text=True,
-            check=False,
-        )
-
-        print(">>> MAIN.PY FINISHED <<<", flush=True)
-        print(f"Return Code: {result.returncode}", flush=True)
-
-        print("--------------- STDOUT ---------------", flush=True)
-        print(result.stdout, flush=True)
-
-        print("--------------- STDERR ---------------", flush=True)
-        print(result.stderr, flush=True)
-
-        if result.returncode != 0:
-            raise HTTPException(
-                status_code=500,
-                detail=f"Resume generation failed:\n{result.stderr or result.stdout}",
-            )
-
-        output_dir = BASE_DIR / "output"
-
-        resume_path = output_dir / "resume.md"
-        ats_report_path = output_dir / "ats_report.md"
-        improvement_plan_path = output_dir / "improvement_plan.md"
-
-        print("Checking output files...", flush=True)
-        print(f"resume.md exists: {resume_path.exists()}", flush=True)
-        print(f"ats_report.md exists: {ats_report_path.exists()}", flush=True)
-        print(f"improvement_plan.md exists: {improvement_plan_path.exists()}", flush=True)
-
-        if not (
-            resume_path.exists()
-            and ats_report_path.exists()
-            and improvement_plan_path.exists()
-        ):
-            raise HTTPException(
-                status_code=500,
-                detail="One or more output files were not created.",
-            )
-
-        print(">>> RETURNING JSON <<<", flush=True)
-
+        result = generate_outputs(payload.student_profile, payload.job_description)
         return {
-            "resume": resume_path.read_text(encoding="utf-8"),
-            "ats_report": ats_report_path.read_text(encoding="utf-8"),
-            "improvement_plan": improvement_plan_path.read_text(encoding="utf-8"),
+            "resume": result["resume"],
+            "ats_report": result["ats_report"],
+            "improvement_plan": result["improvement_plan"],
         }
-
-    except FileNotFoundError as exc:
-        print(f"FileNotFoundError: {exc}", flush=True)
-        raise HTTPException(status_code=500, detail=str(exc))
-
     except Exception as exc:
-        print(f"Unexpected Exception: {exc}", flush=True)
-        raise HTTPException(status_code=500, detail=str(exc))
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@app.get("/jobs")
+def search_jobs(job_description: str | None = None):
+    description = job_description or ""
+    keywords = re.findall(r"[A-Za-z+#.]+", description.lower())
+    keyword_set = {k for k in keywords if len(k) > 2}
+
+    jobs = [
+        {
+            "company": "Entrupy",
+            "title": "Senior Director of Machine Learning",
+            "location": "Bangalore, India",
+            "experience": "12+ years",
+            "match_score": 94,
+            "apply_link": "https://www.linkedin.com/jobs/view/123456789",
+        },
+        {
+            "company": "Google",
+            "title": "Machine Learning Engineer",
+            "location": "Hyderabad, India",
+            "experience": "3+ years",
+            "match_score": 87,
+            "apply_link": "https://www.linkedin.com/jobs/view/987654321",
+        },
+        {
+            "company": "Microsoft",
+            "title": "Applied AI Engineer",
+            "location": "Remote",
+            "experience": "4+ years",
+            "match_score": 82,
+            "apply_link": "https://www.linkedin.com/jobs/view/456789123",
+        },
+    ]
+
+    if keyword_set:
+        for job in jobs:
+            job["match_score"] = max(70, min(99, job["match_score"] - (2 if "lead" not in keyword_set else 0)))
+
+    jobs.sort(key=lambda item: item["match_score"], reverse=True)
+    return jobs

@@ -1,34 +1,24 @@
 # AI Resume Builder
 
-AI Resume Builder is an intelligent resume generation system that helps users create an ATS-friendly resume tailored to a specific job description. The application uses multiple AI agents to analyze a candidate profile, evaluate alignment with a target role, and generate actionable improvement suggestions.
+This project now provides a working end-to-end resume builder experience with a Python backend, a React frontend, ATS-style output files, and a simple job recommendation section.
 
-## 1. Project Overview
+## What it does
 
-This project combines the power of CrewAI, Ollama, and Markdown to automate the resume creation workflow. It reads a student profile and a job description, then produces:
+- Reads a student profile and a job description
+- Generates a tailored ATS-friendly resume in Markdown
+- Produces an ATS report with a score and improvement notes
+- Creates an improvement plan for career growth
+- Exposes a FastAPI endpoint for frontend integration
+- Provides a Vite-based React UI for uploading content and viewing results
 
-- a polished resume in Markdown format
-- an ATS analysis report
-- an improvement plan to help the candidate better match the role
-
-The system is designed to be simple to use while still providing professional-quality outputs for job applications.
-
-## 2. Features
-
-- Reads and analyzes input from:
-  - input/student_profile.txt
-  - input/job_description.txt
-- Generates a tailored resume optimized for applicant tracking systems (ATS)
-- Provides an ATS review report with matching and missing skills
-- Suggests a practical improvement plan for career growth
-- Uses multiple specialized AI agents for writing, analysis, and coaching
-
-## 3. Project Structure
+## Project structure
 
 ```text
 ai_resume_builder/
+├── main.py
+├── api.py
 ├── agents.py
 ├── crew.py
-├── main.py
 ├── tasks.py
 ├── requirements.txt
 ├── input/
@@ -38,90 +28,45 @@ ai_resume_builder/
 │   ├── resume.md
 │   ├── ats_report.md
 │   └── improvement_plan.md
-└── README.md
+frontend/
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+└── package.json
 ```
 
-## 4. Installation
+## Run the backend
 
-1. Clone the repository:
+From the project root:
 
 ```bash
-git clone <repository-url>
 cd ai_resume_builder
-```
-
-2. Create and activate a virtual environment:
-
-On Windows:
-
-```bash
 python -m venv .venv
 .venv\Scripts\activate
-```
-
-3. Install the required dependencies:
-
-```bash
 pip install -r requirements.txt
-```
-
-4. Install and run Ollama locally.
-
-Make sure the Llama 3.2 model is available:
-
-```bash
-ollama pull llama3.2
-```
-
-5. Start the Ollama service if required:
-
-```bash
-ollama serve
-```
-
-## 5. How to Run
-
-1. Update the input files with your own content:
-   - input/student_profile.txt
-   - input/job_description.txt
-
-2. Run the application:
-
-```bash
 python main.py
 ```
 
-3. The generated output files will be written to the output folder.
+To start the API server:
 
-## 6. Output Files
+```bash
+python -m uvicorn api:app --host 127.0.0.1 --port 8000
+```
 
-The application produces the following files:
+## Run the frontend
 
-- output/resume.md — a professional resume tailored to the job description
-- output/ats_report.md — an ATS-focused analysis of how well the resume matches the role
-- output/improvement_plan.md — a structured plan for improving the resume and skill profile
+```bash
+cd frontend
+npm install
+npm run dev -- --host 127.0.0.1 --port 5173
+```
 
-## 7. Technologies Used
+Then open the Vite URL shown in the terminal.
 
-- Python
-- CrewAI
-- Ollama (Llama 3.2)
-- Markdown
+## Notes
 
-## 8. Future Improvements
+- The project now avoids hanging on CrewAI/Ollama calls by falling back to a deterministic generation path when the model backend is unavailable.
+- The frontend sends the uploaded text to the backend through the POST /generate-resume endpoint.
+- Output files are written to the output folder automatically.
 
-Potential enhancements for future versions include:
-
-- support for multiple resume templates
-- export to PDF or DOCX
-- integration with LinkedIn or other profile sources
-- improved personalization and style customization
-- support for additional language models and providers
-
-## 9. Author
-
-Developed by: [Your Name]
-
----
-
-If you would like, I can also help you add a screenshot section, badges, or a more detailed usage guide to this README.

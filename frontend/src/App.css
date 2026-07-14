@@ -1,43 +1,142 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f7fc;
+  font-family: Inter, Arial, sans-serif;
+  background: linear-gradient(135deg, #eff6ff, #f8fafc);
+  color: #0f172a;
 }
 
-.container {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 30px;
-  text-align: center;
+.app-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
 }
 
-h1 {
+.hero-card,
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.hero-card {
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   color: #2563eb;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+.grid-layout {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .card {
-  background: white;
   padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
-input {
-  margin-top: 15px;
+.file-name {
+  margin-top: 12px;
+  color: #475569;
 }
 
-.generate-btn {
-  margin-top: 30px;
-  padding: 15px 40px;
-  font-size: 18px;
+.actions-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.primary-btn,
+.secondary-btn {
   border: none;
-  border-radius: 8px;
+  border-radius: 999px;
+  padding: 12px 18px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary-btn {
   background: #2563eb;
   color: white;
-  cursor: pointer;
 }
 
-.generate-btn:hover {
-  background: #1d4ed8;
+.secondary-btn {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.primary-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.results-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.result-card pre,
+.job-item {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.job-list {
+  display: grid;
+  gap: 12px;
+}
+
+.job-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.error-text {
+  color: #b91c1c;
+  margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading,
+  .job-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
