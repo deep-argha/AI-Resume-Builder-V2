@@ -1,8 +1,19 @@
 # Improvement Plan
 
-1. Strengthen ATS keywords by adding role-specific terms to the resume summary and skill section.
-2. Add measurable project outcomes and metrics for each listed project.
-3. Highlight leadership, teamwork, and deployment experience wherever possible.
-4. Build practical depth in the following areas:
-   - ability, able, accountability, accurate, across, advance, algorithm, aligning
-5. Continue practicing technical interviews and resume tailoring for each target role.
+## Missing Skills
+- computer vision
+- leadership
+
+## Certifications
+- OpenCV Computer Vision Specialization
+- Google Project Management Certificate
+
+## Roadmap
+- Strengthen core technical keywords in the resume summary and skills section.
+- Build at least one portfolio project that demonstrates the missing technical skills.
+- Add measurable achievements and leadership examples to the experience section.
+
+## Recommendations
+- Add role-specific keywords that appear in the job description.
+- Highlight leadership and collaboration examples clearly.
+- Include project outcomes and metrics where possible.

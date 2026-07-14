@@ -1,7 +1,8 @@
 # ATS Report
 
-- Score: 63/100
-- Keywords matched: computer, engineering, experience, learning, machine, system
-- Missing skills to improve: ability, able, accountability, accurate, across, advance, algorithm, aligning
+- Score: 53/100
+- Keyword match: 33%
+- Matching skills: machine learning
+- Missing skills to improve: computer vision, leadership
 - Strengths: Strong academic foundation, project experience, and familiarity with Python and engineering workflows.
 - Weaknesses: Limited direct leadership experience and some role-specific keywords need stronger emphasis.

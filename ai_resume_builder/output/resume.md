@@ -9,7 +9,7 @@ Highly motivated candidate with a solid foundation in computer science and emerg
 - Git
 - Web Development
 - Machine Learning
-- B.Tech Computer Science and Engineering (AI & ML), NIELIT Ropar
+- Python, C++, Machine Learning, SQL, Git, HTML
 
 ## Education
 - B.Tech Computer Science and Engineering (AI & ML)

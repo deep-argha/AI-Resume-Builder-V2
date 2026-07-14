@@ -1,0 +1,1 @@
+Hi, I’m Argha Das. I am a motivated software and AI-focused learner with a strong interest in building practical solutions using Python, machine learning, and modern web technologies. I enjoy solving problems, collaborating with teams, and turning ideas into useful products. I am continuously improving my skills through projects, certifications, and hands-on experience.

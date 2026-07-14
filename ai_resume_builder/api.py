@@ -45,6 +45,11 @@ def generate_resume(payload: ResumeRequest):
             "resume": result["resume"],
             "ats_report": result["ats_report"],
             "improvement_plan": result["improvement_plan"],
+            "cover_letter": result["cover_letter"],
+            "linkedin_about": result["linkedin_about"],
+            "interview_questions": result["interview_questions"],
+            "skills_gap": result["skills_gap"],
+            "resume_match": result["resume_match"],
         }
     except Exception as exc:
         raise HTTPException(status_code=500, detail=str(exc)) from exc
@@ -62,6 +67,7 @@ def search_jobs(job_description: str | None = None):
             "title": "Senior Director of Machine Learning",
             "location": "Bangalore, India",
             "experience": "12+ years",
+            "salary": "$220k+",
             "match_score": 94,
             "apply_link": "https://www.linkedin.com/jobs/view/123456789",
         },
@@ -70,6 +76,7 @@ def search_jobs(job_description: str | None = None):
             "title": "Machine Learning Engineer",
             "location": "Hyderabad, India",
             "experience": "3+ years",
+            "salary": "$180k+",
             "match_score": 87,
             "apply_link": "https://www.linkedin.com/jobs/view/987654321",
         },
@@ -78,6 +85,7 @@ def search_jobs(job_description: str | None = None):
             "title": "Applied AI Engineer",
             "location": "Remote",
             "experience": "4+ years",
+            "salary": "$170k+",
             "match_score": 82,
             "apply_link": "https://www.linkedin.com/jobs/view/456789123",
         },
