@@ -126,6 +126,38 @@ npm run dev
    - Recommended Jobs
 
 ---
+# AI Resume Builder V2
+
+AI Resume Builder V2 is an AI-powered web application that generates ATS-friendly resumes, evaluates resume quality, identifies skill gaps, and recommends relevant job opportunities using AI.
+
+---
+
+# Live Demo
+
+https://ai-resume-builder-v2-seven.vercel.app
+
+---
+
+# Project Features
+
+- AI Resume Generation
+- ATS Score Analysis
+- ATS Score Visualization (Gauge and Progress Bars)
+- Improvement Plan Dashboard
+- Skills Gap Dashboard
+- Resume Match Score
+- Job Recommendation Dashboard
+- Filter Jobs by Location
+- Filter Jobs by Experience
+- Cover Letter Generator
+- LinkedIn About Generator
+- Interview Question Generator
+- Dark Mode
+- User Authentication
+- Drag & Drop Resume Upload
+- Resume Download
+- ATS Report Download
+- Improvement Plan Download
 
 # Screenshots
 
