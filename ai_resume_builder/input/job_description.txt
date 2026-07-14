@@ -1,55 +1,58 @@
-About the job
-About Entrupy Entrupy is a global technology company whose mission is to protect businesses, borders and consumers from transacting in counterfeit goods. Entrupy has developed a patented technology system which utilizes a combination of AI and computer vision to instantly identify and authenticate high value physical goods. Entrupy’s solutions serve business customers including leading luxury brands, retailers, e-commerce marketplaces and online resellers in over 60 countries. Entrupy is growing quickly with team members based in the US, India, Japan and Brazil. Entrupy’s solutions in market:
+Job Title: AI/ML Engineer Intern
 
-Entrupy Apparel Authentication
-Entrupy Bags & Leather Goods Authentication
-Entrupy Sneaker Authentication
-Entrupy Fingerprinting
+Company: TechNova Solutions Pvt. Ltd.
 
-As we continue to build...
+Location: Bangalore, India
 
-We’re seeking curious, growth minded thinkers to help shape our vision, structures and systems; playing a key-role as we launch into our ambitious future. If you’re invigorated by our mission, values, and drive to change the world — we’d love to have you apply.
+Job Type: Full-Time Internship
 
-About The Role
+Job Description:
 
-We are looking for a Senior Director of Machine Learning to lead and scale our computer vision and ML efforts, with teams based in India and Europe. This role goes beyond individual contribution - you will be responsible for defining the long-term ML vision, building and leading high-performing global teams, and driving the development of production-grade systems that power item authentication and fingerprinting at scale.
+TechNova Solutions Pvt. Ltd. is looking for a motivated AI/ML Engineer Intern to join our growing technology team. The ideal candidate should have a strong foundation in Python programming, machine learning concepts, and web technologies. You will work on developing AI-powered applications, data analysis, model integration, and automation solutions.
 
-You will own the end-to-end ML strategy from research and algorithm development to deployment, infrastructure, and continuous improvement, ensuring alignment with business goals and customer impact. This is a highly cross-functional leadership role requiring deep technical expertise, strong organizational leadership, and the ability to operate effectively across geographies.
+Key Responsibilities:
 
-As a senior leader, you will shape the future of our ML capabilities, strengthen India as a core hub, and drive collaboration across distributed teams.
+• Develop and maintain AI-based web applications using Python.
+• Build and optimize machine learning models for real-world applications.
+• Work with SQL databases to manage and retrieve application data.
+• Collaborate with frontend developers to integrate AI features into web applications.
+• Use Git for version control and collaborative development.
+• Debug, test, and improve application performance.
+• Participate in code reviews and contribute to technical documentation.
+• Learn and implement new AI tools and frameworks.
 
-Reports to: CTO
+Required Skills:
 
-Location: Bangalore, India (Hybrid)
+• Strong knowledge of Python.
+• Basic understanding of Machine Learning algorithms.
+• Knowledge of SQL and database concepts.
+• Familiarity with Git and GitHub.
+• Understanding of HTML, CSS, and JavaScript.
+• Good analytical and problem-solving skills.
+• Excellent communication and teamwork abilities.
 
-What You'll Do:
+Preferred Qualifications:
 
-Lead & Scale the Organization: Build, lead, and evolve a high-performing, globally distributed ML team across India and Europe. Define team structure, hire and develop senior talent, establish clear ownership, and create a culture of accountability, rigor, and high-quality execution.
-Define Strategy: Own the ML and computer vision roadmap, aligning technical direction with business priorities and customer impact. Translate company goals into a clear, executable plan with measurable outcomes.
-Drive Execution: Ensure consistent delivery of production-grade ML systems from research to deployment — with a focus on scalability, reliability, and speed. Balance long-term innovation with near-term impact.
-Advance Core Capabilities: Guide the development of computer vision models for authentication and fingerprinting, ensuring models are accurate, robust, and practical for real-world use.
-Build Systems & Infrastructure: Oversee ML infrastructure, training and inference pipelines, and deployment systems. Drive optimization for performance, including edge deployment, latency, and efficiency.
-Cross-Functional & Global Collaboration: Partner closely with product, engineering, and operations teams to define priorities and deliver outcomes. Drive alignment and effective execution across India and Europe teams, ensuring clarity, consistency, and strong communication across geographies.
-Ensure Operational Rigor: Establish best practices, define success metrics, and drive continuous improvement across models, systems, and team processes. Use data and production feedback to inform decisions and improvements.
+• Pursuing or recently completed B.Tech in Computer Science Engineering (AI & ML) or a related field.
+• Experience with AI projects or academic projects.
+• Familiarity with FastAPI or Flask is a plus.
+• Knowledge of React.js is an advantage.
+• Understanding of LLMs, Ollama, or CrewAI is a bonus.
 
-Who You Are
+Preferred Projects:
 
-Experience: 12+ years in machine learning/computer vision, with a strong track record of building and leading high-performing teams and delivering production systems at scale.
-Leadership: Proven ability to build, scale, and lead globally distributed teams. You know how to develop senior talent, create clarity in ambiguous environments, and drive accountability without micromanaging.
-Strategic Thinking: Able to translate business goals into clear ML strategy and execution plans. You balance long-term vision with near-term delivery and make thoughtful trade-offs.
-Technical Depth: Strong foundation in machine learning and computer vision, with the ability to guide architectural decisions, evaluate approaches, and challenge teams where needed without needing to be in the weeds day-to-day.
-Execution & Ownership: You bring a high degree of ownership and can drive complex, cross-functional initiatives from concept through production. You know how to scale systems, processes, and teams effectively.
-Global Collaboration: Comfortable working across geographies (India and Europe), aligning teams, and building strong cross-functional partnerships.
-Communication: Able to clearly articulate complex ideas to both technical and non-technical stakeholders, including executive leadership.
-Mindset: Pragmatic, curious, and impact-driven. You care about solving real problems, not just building elegant models.
+• AI Resume Builder
+• Smart Waste Management System
+• Any Machine Learning or AI-based academic project
 
-What We Offer
+Experience:
 
-Market-competitive, pay equity-focused compensation structure
-Hybrid work model with flexibility
-Comprehensive health benefits and insurance coverage
-Generous time off, including PTO, sick leave, and parental leave
-Opportunity to lead and scale a core ML function in a growing global organization
-Strong platform for innovation, research, and industry contribution
+• Freshers are encouraged to apply.
 
-Entrupy embraces a diversity of backgrounds and experiences and provides equal opportunity for all applicants and employees. We are dedicated to building a company that represents a variety of backgrounds, perspectives, and skills. We believe that the more inclusive we are, the better our work (and work environment) will be for everyone.
+Benefits:
+
+• Hands-on experience with real-world AI projects.
+• Mentorship from experienced software engineers.
+• Opportunity for a full-time role based on performance.
+• Certificate of Internship.
+• Flexible work environment.
